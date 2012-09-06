@@ -1,0 +1,5 @@
+= puppet-reporting module
+
+{<img src='https://codex.cegeka.be/jenkins/job/puppet-reporting/badge/icon' />}[https://codex.cegeka.be/jenkins/job/puppet-reporting/]
+
+This is the reporting module.
