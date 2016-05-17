@@ -5,6 +5,7 @@ define reporting::foreman::config::puppetagent {
     changes => [
       'set report true',
     ],
+    notify  => Service['puppet'],
   }
 
 }
