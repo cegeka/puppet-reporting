@@ -1,11 +1,11 @@
 define reporting::foreman::config::puppetmaster($foreman_url = undef) {
 
   if $foreman_url == undef {
-    fail("Reporting::Foreman::Config::Puppetmaster[$foreman_url]: foreman_url must be defined")
+    fail("Reporting::Foreman::Config::Puppetmaster[${foreman_url}]: foreman_url must be defined")
   }
 
   if $foreman_url !~ /^https?:\/\/.*$/ {
-    fail("Reporting::Foreman::Config::Puppetmaster[$foreman_url]: foreman_url must be a valid URL")
+    fail("Reporting::Foreman::Config::Puppetmaster[${foreman_url}]: foreman_url must be a valid URL")
   }
 
   augeas { 'configure reporting for puppet master':

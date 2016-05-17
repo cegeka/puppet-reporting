@@ -5,8 +5,15 @@ describe 'reporting::foreman::config::puppetmaster' do
   describe 'running puppet code' do
     it 'should work with no errors' do
       pp = <<-EOS
-      puppet::foreman::config::puppetmaster { 'configure master reporting':
+      package { 'cronie':
+        ensure => installed
+      }
+      file { '/usr/local/scripts':
+        ensure => directory
+      }
+      reporting::foreman::config::puppetmaster { 'configure master reporting':
         foreman_url => 'http://foreman.dummy.tld',
+        require     => [File['/usr/local/scripts'],Package['cronie']]
       }
       EOS
 
