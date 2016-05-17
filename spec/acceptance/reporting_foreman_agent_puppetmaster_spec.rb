@@ -11,7 +11,7 @@ describe 'reporting::foreman::config::puppetmaster' do
       file { '/usr/local/scripts':
         ensure => directory
       }
-      puppet::foreman::config::puppetmaster { 'configure master reporting':
+      reporting::foreman::config::puppetmaster { 'configure master reporting':
         foreman_url => 'http://foreman.dummy.tld',
         require     => [File['/usr/local/scripts'],Package['cronie']]
       }
