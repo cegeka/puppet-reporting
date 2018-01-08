@@ -15,3 +15,4 @@ This is the reporting module.  Use this module to setup your Puppet Master and P
   reporting::foreman::config::puppetagent { 'configure agent reporting':
   }
 
+
